@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>重庆 · 成都 七日行程 ｜ 2026.11.24 – 11.30</title>
+<style>
+:root{
+  --bg:#FAF6F0;
+  --card:#FFFFFF;
+  --ink:#1C2229;
+  --ink-2:#4A555F;
+  --muted:#7B8792;
+  --line:#E8E0D6;
+  --red:#B8452F;
+  --red-soft:#FBEDE9;
+  --green:#2F6B4F;
+  --green-soft:#E9F2EC;
+  --amber:#8A6512;
+  --amber-soft:#FBF3DF;
+  --blue:#2A5578;
+  --blue-soft:#E8F0F6;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(28,34,41,.05), 0 8px 24px rgba(28,34,41,.06);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 80px}
+
+/* ---------- header ---------- */
+header{
+  background:linear-gradient(150deg,#1C2229 0%,#2E2A28 45%,#4A2F27 100%);
+  color:#fff;padding:44px 0 38px;margin-bottom:8px;
+}
+header .wrap{padding-bottom:0}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#D9B9A6;margin:0 0 12px}
+h1{font-size:30px;line-height:1.3;margin:0 0 14px;font-weight:700;letter-spacing:-.01em}
+.sub{color:#C9CDD1;font-size:15px;margin:0 0 22px;max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;padding:5px 13px;font-size:13px;color:#EFE6DE;white-space:nowrap;
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;background:rgba(250,246,240,.94);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
+}
+nav .inner{max-width:860px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:9px 12px;scrollbar-width:none}
+nav .inner::-webkit-scrollbar{display:none}
+nav a{
+  flex:0 0 auto;font-size:13.5px;color:var(--ink-2);text-decoration:none;
+  padding:6px 12px;border-radius:999px;white-space:nowrap;font-weight:500;
+}
+nav a:hover{background:#fff;color:var(--red)}
+
+/* ---------- sections ---------- */
+section{margin:44px 0 0;scroll-margin-top:72px}
+h2{
+  font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);
+  margin:0 0 6px;font-weight:700;
+}
+h2 + .h2sub{font-size:23px;font-weight:700;margin:0 0 20px;letter-spacing:-.01em;line-height:1.35}
+h3{font-size:17px;margin:26px 0 10px;font-weight:650}
+p{margin:0 0 14px;color:var(--ink-2)}
+strong{color:var(--ink);font-weight:650}
+a{color:var(--red)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-bottom:16px}
+.card.tight{padding:18px}
+
+/* ---------- callouts ---------- */
+.note{border-radius:12px;padding:15px 17px;margin:0 0 16px;font-size:14.5px;line-height:1.7;border:1px solid}
+.note b{display:block;margin-bottom:4px;font-size:13px;letter-spacing:.06em}
+.note.key{background:var(--red-soft);border-color:#EFD3CA;color:#6E2A1C}
+.note.key b{color:var(--red)}
+.note.ok{background:var(--green-soft);border-color:#CDE2D5;color:#1F4A37}
+.note.ok b{color:var(--green)}
+.note.warn{background:var(--amber-soft);border-color:#EBDCB4;color:#5C4409}
+.note.warn b{color:var(--amber)}
+.note.info{background:var(--blue-soft);border-color:#CBDCE9;color:#1D3D57}
+.note.info b{color:var(--blue)}
+
+/* ---------- timeline (booking actions) ---------- */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:9px;top:10px;bottom:14px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 22px 34px}
+.tl li:last-child{padding-bottom:0}
+.tl .dot{position:absolute;left:2px;top:6px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--line)}
+.tl li.now .dot{border-color:var(--green);background:var(--green)}
+.tl li.hot .dot{border-color:var(--red);background:var(--red);box-shadow:0 0 0 5px var(--red-soft)}
+.tl .when{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.tl li.hot .when{color:var(--red)}
+.tl li.now .when{color:var(--green)}
+.tl .what{font-weight:650;margin:2px 0 3px;font-size:16px}
+.tl .why{font-size:14px;color:var(--ink-2);margin:0}
+
+/* ---------- day cards ---------- */
+.day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:18px;box-shadow:var(--shadow)}
+.day-head{padding:18px 22px 16px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#FFFDFA,#FFFFFF)}
+.day-n{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.14em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:5px;margin-bottom:9px}
+.day-t{font-size:19px;font-weight:700;margin:0 0 4px;line-height:1.4}
+.day-d{font-size:13.5px;color:var(--muted);margin:0}
+.day-body{padding:6px 22px 20px}
+
+.sched{list-style:none;margin:0;padding:0}
+.sched li{display:flex;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.sched li:last-child{border-bottom:none}
+.sched .t{flex:0 0 54px;font-variant-numeric:tabular-nums;font-weight:700;font-size:14px;color:var(--red);padding-top:1px}
+.sched .c{flex:1;min-width:0}
+.sched .c .n{display:block;font-weight:650;font-size:15.5px;margin-bottom:3px;line-height:1.55}
+.sched .c .d{display:block;font-size:14px;color:var(--ink-2);line-height:1.7}
+.sched .c .d:empty{display:none}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;padding:1.5px 7px;border-radius:5px;margin-left:6px;vertical-align:1.5px;letter-spacing:.03em}
+.tag.free{background:var(--green-soft);color:var(--green)}
+.tag.pay{background:var(--amber-soft);color:var(--amber)}
+.tag.rest{background:var(--blue-soft);color:var(--blue)}
+.tag.star{background:var(--red-soft);color:var(--red)}
+
+.alt{margin-top:16px;border-left:3px solid var(--line);padding:2px 0 2px 15px}
+.alt .lbl{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:5px}
+.alt p{font-size:14px;margin:0}
+.alt.plus{border-left-color:var(--green);background:linear-gradient(90deg,rgba(233,242,236,.55),transparent 70%);border-radius:0 8px 8px 0;padding:9px 12px 9px 15px}
+.alt.plus .lbl{color:var(--green)}
+
+/* ---------- tables ---------- */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+th:first-child,td:first-child{min-width:112px}
+.swipe{display:none;font-size:12.5px;color:var(--muted);margin:-8px 0 16px;letter-spacing:.04em}
+@media (max-width:640px){.swipe{display:block}}
+th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:13px 15px;border-bottom:1px solid var(--line);background:#FDFBF8;white-space:nowrap}
+td{padding:13px 15px;border-bottom:1px solid #F2ECE4;vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--ink)}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.best{background:#FDF7F5}
+.best td:first-child{box-shadow:inset 3px 0 0 var(--red)}
+
+/* ---------- checklist ---------- */
+.chk{list-style:none;margin:0;padding:0}
+.chk li{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--line);cursor:pointer}
+.chk li:last-child{border-bottom:none}
+.chk input{margin:5px 0 0;width:17px;height:17px;accent-color:var(--green);flex:0 0 auto;cursor:pointer}
+.chk .txt{flex:1;font-size:15px;line-height:1.65}
+.chk .txt small{display:block;color:var(--muted);font-size:13px;margin-top:1px;line-height:1.6}
+.chk li.done .txt{color:var(--muted);text-decoration:line-through;text-decoration-color:#CFC7BC}
+.chk li.done .txt small{text-decoration:line-through;text-decoration-color:#DFD8CE}
+.prog{display:flex;align-items:center;gap:11px;margin:2px 0 14px}
+.prog .bar{flex:1;height:7px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog .fill{height:100%;width:0;background:var(--green);border-radius:99px;transition:width .3s ease}
+.prog .pct{font-size:13px;font-weight:700;color:var(--green);font-variant-numeric:tabular-nums;flex:0 0 auto}
+
+/* ---------- misc ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 17px;box-shadow:var(--shadow)}
+.mini .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px}
+.mini .v{font-size:20px;font-weight:700;line-height:1.3;margin-bottom:3px}
+.mini .s{font-size:13.5px;color:var(--ink-2);line-height:1.6}
+ul.plain{margin:0 0 14px;padding-left:20px;color:var(--ink-2)}
+ul.plain li{margin-bottom:7px}
+footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.75}
+
+@media (max-width:600px){
+  h1{font-size:25px}
+  h2 + .h2sub{font-size:20px}
+  .wrap{padding:0 15px 60px}
+  .card{padding:18px}
+  .day-head{padding:16px 17px 14px}
+  .day-body{padding:4px 17px 18px}
+  .grid2{grid-template-columns:1fr}
+  .sched .t{flex:0 0 48px;font-size:13.5px}
+  header{padding:34px 0 30px}
+}
+@media print{
+  nav{display:none}
+  header{background:#1C2229!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .day,.card,.tbl-wrap{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Chongqing · Chengdu · 7 Days</p>
+    <h1>重庆 · 成都 七日行程</h1>
+    <p class="sub">为 59 岁、行动自如的父母设计。山城在前、蓉城在后，主线保持舒适节奏，每天另附「体力富余可加码」的选项，走不走由当天状态决定。</p>
+    <div class="meta">
+      <span class="chip">2026年11月24日（二）– 11月30日（一）</span>
+      <span class="chip">新加坡出发 · 重庆进 成都出</span>
+      <span class="chip">3人 · 马来西亚护照免签</span>
+      <span class="chip">中国旅游淡季 · 人少价平</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="inner">
+    <a href="#buy">何时买票</a>
+    <a href="#flight">航班方案</a>
+    <a href="#route">7日行程</a>
+    <a href="#weather">天气穿衣</a>
+    <a href="#hotel">住宿</a>
+    <a href="#transport">交通</a>
+    <a href="#budget">预算</a>
+    <a href="#prep">行前清单</a>
+    <a href="#elder">实战经验</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ 何时买票 ============ -->
+<section id="buy">
+  <h2>Booking Window</h2>
+  <div class="h2sub">机票什么时候买最便宜</div>
+
+  <div class="note key">
+    <b>结论</b>
+    <strong>最佳下手窗口：2026年9月5日 – 10月15日</strong>（出行前约 40–80 天）。现在（8月中，出发前 100 天）就该开始设价格提醒，但先别急着买 —— 除非看到明显低于常态的价格。
+  </div>
+
+  <p>为什么是这个窗口，三个理由：</p>
+  <ul class="plain">
+    <li><strong>11月24–30日是中国旅游全年最淡的时段之一</strong>。国庆黄金周已过、春节还早，川渝又不是滑雪目的地，航司和酒店都在抢客。这段时间的价格本身就是低位。</li>
+    <li><strong>各大航司「冬春航季」10月底换季</strong>，运力和票价档位通常在 9 月陆续放出并调整，9 月往往能捡到冬季航季刚开卖的低价舱位。</li>
+    <li><strong>出发前 21 天内价格会明显跳涨</strong>。也就是 11 月 3 日之后基本不会再便宜，别赌最后一刻。</li>
+    <li><strong>改成 11/24 去、11/30 回，反而更省。</strong>周二出发、周一返程，是全周票价最低的两个档 —— 航司的定价模型里，周五、周日出发最贵，周二、周三最便宜。原方案的周一去、周日回正好踩在贵的那一侧。这一改可能就省下几十到上百新币。</li>
+  </ul>
+
+  <h3>从现在到出发的动作表</h3>
+  <div class="card">
+    <ul class="tl">
+      <li class="now">
+        <span class="dot"></span>
+        <div class="when">现在 · 8月中下旬</div>
+        <div class="what">设价格提醒，不买</div>
+        <p class="why">在 Google Flights 和 Skyscanner 建立「新加坡→重庆」「成都→新加坡」两条单程的价格追踪，多程（Multi-city）也建一条。观察两周，摸清正常价位是多少，之后才知道什么叫「便宜」。</p>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <div class="when">8月底 – 9月初</div>
+        <div class="what">先锁酒店，选可免费取消的</div>
+        <p class="why">酒店和机票逻辑相反 —— 早订不吃亏。挑「入住前 1–3 天可免费取消」的房，现在就把江景房和好位置占住，之后价格降了再重订一次即可，零风险。</p>
+      </li>
+      <li class="hot">
+        <span class="dot"></span>
+        <div class="when">9月5日 – 10月15日 ★</div>
+        <div class="what">买机票 —— 最佳窗口</div>
+        <p class="why">看到往返（开口程）人均 S$450–600 就可以下手了，S$400 出头算捡到。别为了再省 S$30 一直等。三个人一起走，位置连坐比省几十块重要。</p>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <div class="when">10月下旬</div>
+        <div class="what">办 eSIM、装 App、支付宝绑卡</div>
+        <p class="why">尤其是帮父母把支付宝装好、绑好外币卡、做完护照实名认证。这件事一定要在出发前在家里试成功，不要到了中国才第一次弄。</p>
+      </li>
+      <li class="hot">
+        <span class="dot"></span>
+        <div class="when">11月12日 ★</div>
+        <div class="what">抢高铁票（沙坪坝→成都东）</div>
+        <p class="why">中国铁路 12306 只在<strong>发车前 15 天</strong>放票，一天都提前不了。11月27日的车，11月12日开卖。设好闹钟。</p>
+      </li>
+      <li class="hot">
+        <span class="dot"></span>
+        <div class="when">11月14日起 ★</div>
+        <div class="what">抢熊猫基地门票 × 3 张</div>
+        <p class="why">父母 59 岁，<strong>不满 60 岁就没有免预约资格</strong>，三个人都要提前实名预约。各渠道放票口径不一（官网英文页写提前 7 天、多个攻略写提前 14 天），<strong>从 11月14日 起每天查一次</strong>，一开放立刻订 11月28日上午场。</p>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <div class="when">11月19日 – 11月21日</div>
+        <div class="what">订演出、餐厅、包车、博物馆</div>
+        <p class="why">蜀风雅韵川剧变脸（选中间偏前排）、热门火锅店、大足石刻当天的包车或专车、三峡博物馆预约。</p>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <div class="when">11月22日 – 23日</div>
+        <div class="what">换现金、装药、打包</div>
+        <p class="why">换 ¥2,000–3,000 现金（三人份），分开放。父母的常用药按行程天数 +5 天备量。</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="note info">
+    <b>比价小技巧</b>
+    ① 用「多程 / Multi-city」搜「SIN→CKG ＋ TFU→SIN」，通常比两张单程便宜。<br>
+    ② 同时查一次「SIN→CKG 往返」和「SIN→TFU 往返」做对照 —— 有时往返程票价低到即使浪费一段也更划算。<br>
+    ③ 中国的 OTA（携程国际站 Trip.com）搜中国航司常比 Google Flights 便宜 5–15%，但退改条款要看清楚。
+  </div>
+</section>
+
+<!-- ============ 航班 ============ -->
+<section id="flight">
+  <h2>Flights</h2>
+  <div class="h2sub">航班方案 · 为什么是「重庆进、成都出」</div>
+
+  <p>新加坡飞重庆和飞成都都有直飞，约 5 小时，两地同为 UTC+8，<strong>零时差、不倒时差</strong>，对长辈非常友好。重庆和成都之间高铁只要 1 小时出头，所以最优解是开口程：<strong>重庆进、成都出，不走回头路</strong>，能省下整整半天。</p>
+
+  <p>顺序也有讲究：<strong>重庆是山城，坡多、梯坎多、走路强度大</strong>，安排在体力最好的前三天；成都地势平坦、节奏慢、以熊猫和茶馆为主，放在后面收尾刚刚好。</p>
+
+  <h3>去程 · 新加坡 → 重庆江北（CKG）</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>航班</th><th>时刻</th><th>评价</th></tr></thead>
+      <tbody>
+        <tr class="best">
+          <td><strong>国航 CA490</strong><br><span style="font-size:13px;color:var(--muted)">每日</span></td>
+          <td class="num">15:00 → 20:10</td>
+          <td><strong>推荐。</strong>中午从容出门，晚上 8 点落地，9 点半进酒店睡觉。对长辈最合适的时刻。</td>
+        </tr>
+        <tr>
+          <td><strong>新航 SQ818</strong><br><span style="font-size:13px;color:var(--muted)">每日</span></td>
+          <td class="num">20:05 → 01:15+1</td>
+          <td>凌晨 1 点落地、2 点多才进酒店，第一天直接报废。<strong>不建议带父母坐</strong>，除非价差很大。</td>
+        </tr>
+        <tr>
+          <td><strong>西部航空 PN6444</strong><br><span style="font-size:13px;color:var(--muted)">一 / 三 / 五</span></td>
+          <td class="num">04:45 → 09:55</td>
+          <td><strong>11月24日是周二，这班不飞</strong>，直接排除。（就算飞也不建议 —— 廉航、凌晨 2 点就要到机场。）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="swipe">← 表格可左右滑动查看完整内容 →</p>
+  
+
+  <h3>回程 · 成都天府（TFU） → 新加坡</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>航班</th><th>时刻</th><th>评价</th></tr></thead>
+      <tbody>
+        <tr class="best">
+          <td><strong>新航 SQ843</strong><br><span style="font-size:13px;color:var(--muted)">每日</span></td>
+          <td class="num">18:25 → 23:30</td>
+          <td><strong>推荐。</strong>最后一天可以睡到自然醒、悠闲买手信、吃顿好的再走。代价是当晚 11 点半才到新加坡。</td>
+        </tr>
+        <tr>
+          <td><strong>川航 3U3909</strong><br><span style="font-size:13px;color:var(--muted)">每日</span></td>
+          <td class="num">10:40 → 15:45</td>
+          <td>下午到家，第二天好休整。但要 06:30 离开酒店赶车 —— 等于放弃第 7 天。</td>
+        </tr>
+        <tr>
+          <td><strong>国航 CA403</strong><br><span style="font-size:13px;color:var(--muted)">周二除外</span></td>
+          <td class="num">10:10 → 15:15</td>
+          <td>同上。若跟去程 CA490 买同一航司的开口程，价格通常最优，可以考虑。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="swipe">← 表格可左右滑动查看完整内容 →</p>
+  
+
+  <div class="note warn">
+    <b>成都天府机场很远，务必留时间</b>
+    天府机场（TFU）距市中心约 50 公里，打车 60–75 分钟（¥150–180），地铁 18 号线约 50 分钟。国际航班请<strong>提前 3.5 小时从酒店出发</strong>。注意成都还有一个双流机场（CTU），离市区近得多，但目前没有直飞新加坡的航班 —— 订票时别订错机场。
+  </div>
+
+  <div class="note info">
+    <b>参考票价</b>
+    单程含税低价约 S$165–180 起（廉航/促销），全服务航司开口程往返合理区间约 <strong>人均 S$450–750（约 RM1,500–2,500）</strong>。这只是量级参考，实际以你追踪两周后看到的价位为准。
+  </div>
+</section>
+
+<!-- ============ 行程 ============ -->
+<section id="route">
+  <h2>Day by Day</h2>
+  <div class="h2sub">七日详细行程</div>
+
+  <div class="note ok">
+    <b>整体节奏原则</b>
+    每天 1 个主景点 + 1–2 个轻松点；<strong>13:30–15:30 留出回酒店午休的时间</strong>；晚餐不超过 19:30 开始；任何一天觉得累，直接跳过下午的安排，行程里都留了余量。<br>
+    父母 59 岁、行动自如，这个节奏对他们其实<strong>偏轻松</strong>——所以每天都另附了「<strong>体力富余可加码</strong>」的选项。主线保证不会累垮，加码部分当天看状态临时决定就好。重庆湿滑爬坡多，前三天先别把弦绷太紧。
+  </div>
+
+  <div class="note warn">
+    <b>改到 11/24–11/30 之后，有一处要留意：成都那三天全压在周末</b>
+    原本 D5 熊猫基地在周五、D6 都江堰在周六；后移一天之后变成 <strong>D5 周六、D6 周日</strong>，两个热门景点都落在了周末，人会明显更多。<br>
+    <strong>对策：</strong>① 熊猫基地严格执行 7:30 开园就到 —— 这一条比哪天去更管用；② 抢票那天卡点，周末场次售罄更快；③ 都江堰周日人多，如果当天不想挤，<strong>直接换成 Day 6 的「成都市内三国文化线」替代方案</strong>（武侯祠+锦里+杜甫草堂，全平地，周末也不至于寸步难行）。<br>
+    重庆那几天反而更好了：D2 周三、D3 周四、D4 周五上午的磁器口，全是工作日，比原方案清静。
+  </div>
+
+  <!-- Day 1 -->
+  <div class="day">
+    <div class="day-head">
+      <span class="day-n">DAY 1</span>
+      <div class="day-t">新加坡 → 重庆 · 只负责安全抵达</div>
+      <div class="day-d">11月24日 · 周二 · 今日不安排任何景点</div>
+    </div>
+    <div class="day-body">
+      <ul class="sched">
+        <li><span class="t">11:30</span><span class="c"><span class="n">樟宜机场值机</span><span class="d">国际航班提前 3 小时。父母若走路慢，可提前跟航司申请<strong>免费机场轮椅接送</strong>（值机、安检、登机口全程），一通电话的事，非常值得。</span></span></li>
+        <li><span class="t">15:00</span><span class="c"><span class="n">CA490 起飞</span><span class="d">飞行约 5 小时 10 分。提醒父母每小时起身走动一次，防深静脉血栓。</span></span></li>
+        <li><span class="t">20:10</span><span class="c"><span class="n">抵达重庆江北国际机场 T3</span><span class="d">走「免签入境」通道。T3 很大，从廊桥到取完行李走出来大约 15–20 分钟。</span></span></li>
+        <li><span class="t">21:00</span><span class="c"><span class="n">前往解放碑酒店<span class="tag pay">¥90–120</span></span><span class="d">直接坐出租车或网约车，约 35–45 分钟。<strong>带着行李和长辈，别为省钱去挤地铁</strong>（10号线转1号线要换乘、拖行李上下站）。</span></span></li>
+        <li><span class="t">21:45</span><span class="c"><span class="n">入住 · 早点休息<span class="tag rest">休息</span></span><span class="d">酒店楼下便利店买点热的、水果。不出门、不打卡。明天才是真正的第一天。</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day">
+    <div class="day-head">
+      <span class="day-n">DAY 2</span>
+      <div class="day-t">重庆母城 · 博物馆 + 索道 + 山城夜景</div>
+      <div class="day-d">11月25日 · 周三 · 强度：中低 · 步行约 6,000 步</div>
+    </div>
+    <div class="day-body">
+      <ul class="sched">
+        <li><span class="t">08:30</span><span class="c"><span class="n">酒店早餐，睡到自然醒</span><span class="d">第一天落地晚，今天不设闹钟。</span></span></li>
+        <li><span class="t">09:30</span><span class="c"><span class="n">重庆人民大礼堂 · 人民广场<span class="tag free">外观免费</span></span><span class="d">打车 15 分钟。仿天坛的红柱蓝顶大殿，气派，父母辈会很喜欢，拍照 20 分钟足够。</span></span></li>
+        <li><span class="t">10:00</span><span class="c"><span class="n">中国三峡博物馆<span class="tag free">免费</span><span class="tag star">强推</span></span><span class="d">就在大礼堂正对面。<strong>全室内、有电梯、有座椅、有暖气</strong>，重庆 11 月又湿又阴，这里是完美的上午安排。三峡文物、山城历史，看 1.5–2 小时。<strong>需提前 1–7 天在「重庆中国三峡博物馆」公众号预约</strong>，外国护照可登记。</span></span></li>
+        <li><span class="t">12:00</span><span class="c"><span class="n">午餐 · 重庆老字号</span><span class="d">陶然居、枇杷园一类正经江湖菜馆，比火锅温和。先让父母的肠胃适应一天。</span></span></li>
+        <li><span class="t">13:30</span><span class="c"><span class="n">回酒店午休<span class="tag rest">必须</span></span><span class="d">睡 1.5 小时。这一步别省，直接决定晚上还走不走得动。</span></span></li>
+        <li><span class="t">15:30</span><span class="c"><span class="n">李子坝轻轨穿楼<span class="tag free">免费</span></span><span class="d">专门修了观景平台，看轻轨从居民楼里穿出来。打卡性质，10–15 分钟走人，别排队上车。</span></span></li>
+        <li><span class="t">16:30</span><span class="c"><span class="n">长江索道<span class="tag pay">往返 ¥30</span><span class="tag star">诀窍</span></span><span class="d">4 分钟横跨长江，重庆最经典的体验。<br><strong>关键诀窍：从南岸「上新街南站」上车，不要从渝中「新华路北站」。</strong>北站常年排队 1 小时起，南站基本不排队，看到的景色完全一样。营业到 21:00。</span></span></li>
+        <li><span class="t">17:30</span><span class="c"><span class="n">南滨路 / 龙门浩老街散步<span class="tag free">免费</span></span><span class="d">索道南站下来就是。江边平路，正对渝中半岛，天色由蓝转黑的过程最美。</span></span></li>
+        <li><span class="t">18:15</span><span class="c"><span class="n">洪崖洞夜景<span class="tag free">免费</span></span><span class="d">冬季约 18:00 亮灯、23:00 熄灯，<strong>免费、不需预约</strong>。<br><strong>重点：不必挤进洪崖洞里面。</strong>最好的机位在<strong>千厮门大桥桥面</strong>和<strong>南滨路对岸</strong>——洪崖洞的美是从外面看的，里面就是拥挤的商业街，对长辈是纯受罪。</span></span></li>
+        <li><span class="t">19:30</span><span class="c"><span class="n">晚餐 · 鸳鸯锅火锅<span class="tag pay">¥120–180/人</span></span><span class="d">珮姐、周师兄一类口碑店。<strong>务必点鸳鸯锅或直接清汤锅</strong>，重庆的红汤对没吃惯的长辈太猛。提前在大众点评线上取号，别现场干等 1 小时。</span></span></li>
+      </ul>
+      <div class="alt plus">
+        <div class="lbl">＋ 体力富余可加码</div>
+        <p>午休后加 <strong>鹅岭二厂文创公园</strong>（老印刷厂改造，天台看两江，坡有点陡但不长），或索道下来后走一段 <strong>山城步道</strong>（老重庆的吊脚楼和石梯，很出片，全程约 40 分钟）。</p>
+      </div>
+      <div class="alt">
+        <div class="lbl">如果下雨或走不动</div>
+        <p>把李子坝去掉，午休后直接 16:00 出发坐索道 → 南滨路 → 看夜景 → 吃饭。三峡博物馆一个上午已经很值回票价。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day">
+    <div class="day-head">
+      <span class="day-n">DAY 3</span>
+      <div class="day-t">大足石刻 · 世界文化遗产</div>
+      <div class="day-d">11月26日 · 周四 · 强度：中 · 全天在外</div>
+    </div>
+    <div class="day-body">
+      <ul class="sched">
+        <li><span class="t">08:30</span><span class="c"><span class="n">沙坪坝站 / 重庆西站 乘高铁<span class="tag pay">¥30–50</span></span><span class="d">到大足南站约 35–50 分钟。或者<strong>直接包车一天（¥600–800）</strong>，门到门约 90 分钟，对长辈舒服很多，三个人分摊也不贵 —— 强烈建议选包车。</span></span></li>
+        <li><span class="t">10:00</span><span class="c"><span class="n">宝顶山石刻<span class="tag pay">¥110 × 3人</span><span class="tag star">高光</span></span><span class="d">南宋摩崖造像，千手观音、卧佛，规模和精美程度是整趟行程的文化高光。<br><strong>三人都买全票 ¥110</strong>——老年优惠要 60 岁起，父母 59 岁差一年，用不上。<br><strong>景区观光车 ¥20 往返，一定要坐</strong>，能省掉一大段上坡路。</span></span></li>
+        <li><span class="t">13:00</span><span class="c"><span class="n">景区附近午餐</span><span class="d">大足本地菜，清淡不辣，正好换换口味。</span></span></li>
+        <li><span class="t">14:30</span><span class="c"><span class="n">返程回重庆</span><span class="d">下午 4 点左右到市区。</span></span></li>
+        <li><span class="t">17:00</span><span class="c"><span class="n">酒店休息<span class="tag rest">必须</span></span><span class="d">今天走得多，回来先躺一个小时。</span></span></li>
+        <li><span class="t">18:30</span><span class="c"><span class="n">晚餐 · 清淡收尾</span><span class="d">小滨楼、老四川一类，喝碗汤，早点睡。</span></span></li>
+      </ul>
+      <div class="alt plus">
+        <div class="lbl">＋ 体力富余可加码</div>
+        <p>宝顶山看完加 <strong>北山石刻</strong>（¥58，唐宋造像，以精细秀美著称，与宝顶山的宏大是两种风格）。两处合计约 6 小时，59 岁的体力完全吃得下，但要保证是包车、不用赶高铁班次。</p>
+      </div>
+      <div class="alt">
+        <div class="lbl">轻松替代方案 · 如果觉得来回折腾</div>
+        <p><strong>上午</strong> 磁器口古镇（地铁 1 号线直达，石板路平缓，1.5–2 小时）→ <strong>午餐 + 午休</strong> → <strong>下午</strong> 南山一棵树观景台（¥30，车直接开到山顶，看重庆全景不用爬）→ <strong>晚上</strong> 南滨路江边晚餐。全天步行不到 4,000 步。<br><em>注：若选这个方案，Day 4 上午的磁器口就换成 解放碑 + 十八梯 或 酒店休息。</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day">
+    <div class="day-head">
+      <span class="day-n">DAY 4</span>
+      <div class="day-t">磁器口古镇 → 高铁 → 成都</div>
+      <div class="day-d">11月27日 · 周五 · 强度：低 · 转场日</div>
+    </div>
+    <div class="day-body">
+      <ul class="sched">
+        <li><span class="t">08:00</span><span class="c"><span class="n">早餐、退房、行李寄存前台</span><span class="d"></span></span></li>
+        <li><span class="t">09:00</span><span class="c"><span class="n">磁器口古镇<span class="tag free">免费</span></span><span class="d">地铁 1 号线直达「磁器口」站。逛 1.5–2 小时，买陈麻花、张飞牛肉当手信。<br><strong>诀窍：主街人挤人，往「后街」和宝轮寺方向走</strong>，同样是老街，安静好走得多。</span></span></li>
+        <li><span class="t">11:30</span><span class="c"><span class="n">回酒店取行李 → 沙坪坝站</span><span class="d">磁器口到沙坪坝地铁只有 1 站。<strong>沙坪坝站是高铁站和商场合体的建筑</strong>，取了行李直接进站。</span></span></li>
+        <li><span class="t">12:30</span><span class="c"><span class="n">沙坪坝站内午餐</span><span class="d">站上龙湖商场餐厅很多，从容吃完再检票。</span></span></li>
+        <li><span class="t">14:00</span><span class="c"><span class="n">高铁 沙坪坝 → 成都东<span class="tag pay">二等 ¥154 / 一等 ¥246</span><span class="tag star">诀窍</span></span><span class="d">最快 <strong>62 分钟</strong>。<br><strong>为什么选沙坪坝出发：</strong>沙坪坝在市区里、离磁器口 1 站地铁，而重庆西站/重庆北站都在城市外围，光是过去就要 40 分钟。这一步能省掉一趟折腾。<br>带长辈建议<strong>买一等座</strong>，座椅宽、上下车人少，一小时的车程加 ¥90 很划算。</span></span></li>
+        <li><span class="t">15:30</span><span class="c"><span class="n">成都东站 → 春熙路酒店<span class="tag pay">¥40–60</span></span><span class="d">打车 20–30 分钟，或地铁 2 号线。带行李还是打车。</span></span></li>
+        <li><span class="t">16:30</span><span class="c"><span class="n">入住休息<span class="tag rest">休息</span></span><span class="d">明天要早起看熊猫，今晚务必早睡。</span></span></li>
+        <li><span class="t">18:00</span><span class="c"><span class="n">晚餐 · 成都家常川菜</span><span class="d">马旺子、陈麻婆豆腐、明婷饭店。成都的辣比重庆温和很多，长辈接受度高。</span></span></li>
+        <li><span class="t">19:30</span><span class="c"><span class="n">太古里 · IFS 熊猫爬楼 散步<span class="tag free">免费</span></span><span class="d">全平地、灯光好、有座椅，饭后遛弯的完美选择。</span></span></li>
+      </ul>
+      <div class="alt plus">
+        <div class="lbl">＋ 体力富余可加码</div>
+        <p>今天整体很轻松。若磁器口逛得快，可以把高铁提早到 12:30 那班，下午多出的时间加 <strong>东郊记忆</strong>（旧厂房改造，成都最好逛的文创区，全平地）或 <strong>锦江夜游</strong>（东门码头登船，约 40 分钟，坐着看夜景，最适合刚转场的这一晚）。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day">
+    <div class="day-head">
+      <span class="day-n">DAY 5</span>
+      <div class="day-t">大熊猫 + 鹤鸣茶社 + 川剧变脸</div>
+      <div class="day-d">11月28日 · 周六 · 强度：中 · 全程重头戏</div>
+    </div>
+    <div class="day-body">
+      <div class="note key" style="margin-bottom:14px">
+        <b>今天最重要的两件事</b>
+        ① <strong>必须早起</strong>——熊猫 8:30 之后就回屋睡觉了，7:30 到园和 10:00 到园是两种完全不同的体验。<br>
+        ② <strong>三个人都必须提前线上实名预约</strong>。官方规定只有 <strong>60 周岁及以上</strong>可以免预约刷证入园，父母 59 岁差一年，享受不到 —— 必须和你一样提前抢票、全票 ¥55。<strong>各渠道放票口径不一（官网英文页写提前 7 天、本地宝与多个攻略写提前 14 天），保险做法是 11月14日 起每天查一次，一放票立刻订。</strong><br>
+        ③ <strong>改期后这天变成了周六，人会明显更多。</strong>上午场的票会比工作日更快售罄，抢票那天务必卡点。好消息是：<strong>7:30 开园就到</strong>这一条，本身就能避开绝大部分人流 —— 周六早上七点半的熊猫基地，仍然比周五上午十点清静。
+      </div>
+      <ul class="sched">
+        <li><span class="t">07:00</span><span class="c"><span class="n">起床，酒店早餐或路上买</span><span class="d">让前台头天晚上帮忙备好早餐盒。</span></span></li>
+        <li><span class="t">07:30</span><span class="c"><span class="n">打车前往熊猫基地<span class="tag pay">¥60–80</span></span><span class="d">约 40 分钟。这个点用滴滴叫车最稳。</span></span></li>
+        <li><span class="t">08:00</span><span class="c"><span class="n">成都大熊猫繁育研究基地<span class="tag pay">¥55 × 3人</span><span class="tag star">全程高光</span></span><span class="d">冬季 7:30 开园、18:00 闭园，上午场入园时段 7:30–12:00。<br><strong>从「南门」进</strong>，路线最简单不绕。<strong>园内观光车约 ¥30/人（官网价），务必坐</strong>——基地比想象中大得多，走完全程能把人走垮。<br>重点看：月亮产房、太阳产房（幼年大熊猫）、大熊猫别墅。看 2.5–3 小时足够，不要贪多。</span></span></li>
+        <li><span class="t">11:30</span><span class="c"><span class="n">打车回市区</span><span class="d"></span></span></li>
+        <li><span class="t">12:00</span><span class="c"><span class="n">午餐 · 宽窄巷子附近</span><span class="d"></span></span></li>
+        <li><span class="t">13:30</span><span class="c"><span class="n">宽窄巷子<span class="tag free">免费</span></span><span class="d">川西民居老街，平缓好走，1–1.5 小时。商业化较重，当作散步和拍照就好。</span></span></li>
+        <li><span class="t">15:00</span><span class="c"><span class="n">人民公园 · 鹤鸣茶社<span class="tag pay">茶 ¥25–40</span><span class="tag star">最推荐</span></span><span class="d"><strong>整趟行程里最适合父母的一站。</strong>百年老茶馆，竹椅盖碗茶，坐一下午都行。周围有掏耳朵的师傅（¥50–100，体验独特）、有唱歌跳舞的、有相亲角。这是真正的成都生活，不是给游客看的表演。<br>让父母在这儿坐两个小时，比走三个景点开心得多。</span></span></li>
+        <li><span class="t">17:30</span><span class="c"><span class="n">晚餐</span><span class="d">吃早一点，赶 19:00 的演出。</span></span></li>
+        <li><span class="t">19:00</span><span class="c"><span class="n">蜀风雅韵 · 川剧变脸<span class="tag pay">¥180–320/人</span></span><span class="d">约 1.5 小时，<strong>室内、有座位、含茶点</strong>，变脸、吐火、手影、木偶戏，长辈几乎没有不喜欢的。<br><strong>订中间偏前的位置</strong>，看变脸的细节完全不一样。提前几天在携程/大众点评订。</span></span></li>
+        <li><span class="t">21:00</span><span class="c"><span class="n">回酒店</span><span class="d"></span></span></li>
+      </ul>
+      <div class="alt plus">
+        <div class="lbl">＋ 体力富余可加码</div>
+        <p>宽窄巷子和鹤鸣茶社之间可以插进 <strong>武侯祠 + 锦里</strong>（¥50，三国主题，两处紧邻），这样 Day 6 就能腾出来专心去都江堰或青城山。不过我更建议<strong>别加</strong>——鹤鸣茶社那两个小时才是这趟旅行里父母最会记得的部分。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day">
+    <div class="day-head">
+      <span class="day-n">DAY 6</span>
+      <div class="day-t">都江堰 · 两千两百年还在用的水利工程</div>
+      <div class="day-d">11月29日 · 周日 · 强度：中 · 全程可代步</div>
+    </div>
+    <div class="day-body">
+      <ul class="sched">
+        <li><span class="t">09:00</span><span class="c"><span class="n">成都东站 / 犀浦站 → 都江堰站<span class="tag pay">¥15–25</span></span><span class="d">城际动车约 30–40 分钟，班次很密。</span></span></li>
+        <li><span class="t">10:00</span><span class="c"><span class="n">打车至离堆公园门<span class="tag pay">¥15</span></span><span class="d">10 分钟。</span></span></li>
+        <li><span class="t">10:30</span><span class="c"><span class="n">都江堰景区<span class="tag pay">¥80 × 3人</span></span><span class="d">李冰父子公元前 256 年修的，至今仍在灌溉成都平原 —— 这个故事本身就足够震撼。<br><strong>建议路线：</strong>离堆公园 → 伏龙观 → 宝瓶口 → 飞沙堰 → 鱼嘴 → 观光车回。<br><strong>省腿三件套建议买：</strong>园内观光车 ¥15、玉垒山扶梯 ¥30、必要时的电瓶车。加起来不到 ¥50。<br><strong>安澜索桥会晃</strong>，若恐高直接绕行，不影响主要看点。<br>四川的景区优惠是 60–64 岁半价、65 岁以上免票，<strong>59 岁同样用不上</strong>，三人全票。</span></span></li>
+        <li><span class="t">14:00</span><span class="c"><span class="n">南桥附近午餐</span><span class="d">江景廊桥旁，环境好。</span></span></li>
+        <li><span class="t">15:00</span><span class="c"><span class="n">南桥 + 西街散步<span class="tag free">免费</span></span><span class="d">南桥是座极漂亮的雕花廊桥，跨在岷江上。全平地。</span></span></li>
+        <li><span class="t">16:30</span><span class="c"><span class="n">动车回成都</span><span class="d"></span></span></li>
+        <li><span class="t">18:00</span><span class="c"><span class="n">晚餐 + 早休息</span><span class="d">明天要飞，今晚把行李收好。</span></span></li>
+      </ul>
+      <div class="alt plus">
+        <div class="lbl">＋ 体力富余可加码 · 青城山前山</div>
+        <p>都江堰上午看完，下午加 <strong>青城山前山</strong>（¥80 + 索道往返 ¥60）。「青城天下幽」，坐索道上去、慢慢走下来，约 2.5–3 小时，全程林荫石阶。<strong>59 岁体力做得到，但这一天会变成 10 小时在外</strong>，且第二天就要飞。若加了，晚餐务必简单、早睡。</p>
+      </div>
+      <div class="alt">
+        <div class="lbl">轻松替代方案 · 成都市内三国文化线（全平地）</div>
+        <p><strong>上午</strong> 武侯祠（¥50，诸葛亮、刘备，长辈的知识储备在这里最能派上用场）+ 锦里古街（免费，紧邻）→ <strong>午餐 + 午休</strong> → <strong>下午</strong> 杜甫草堂（¥50，园林极美，<strong>有轮椅租借</strong>）→ <strong>傍晚</strong> 浣花溪公园散步。<br>全天几乎没有台阶，如果 Day 5 熊猫基地走累了，果断换这个。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day">
+    <div class="day-head">
+      <span class="day-n">DAY 7</span>
+      <div class="day-t">买手信 → 天府机场 → 新加坡</div>
+      <div class="day-d">11月30日 · 周一 · 强度：低</div>
+    </div>
+    <div class="day-body">
+      <ul class="sched">
+        <li><span class="t">08:30</span><span class="c"><span class="n">睡到自然醒，酒店早餐</span><span class="d">晚班机的好处，最后一天完全不赶。</span></span></li>
+        <li><span class="t">10:00</span><span class="c"><span class="n">春熙路 / 太古里 采买手信</span><span class="d">熊猫周边、蜀绣、竹叶青茶叶、火锅底料、灯影牛肉。<br><strong>省事做法：</strong>直接去伊藤洋华堂或王府井超市，一站买齐，有包装、有购物袋，比在景区一家家买省一半时间。</span></span></li>
+        <li><span class="t">12:00</span><span class="c"><span class="n">最后一顿川菜</span><span class="d"></span></span></li>
+        <li><span class="t">13:30</span><span class="c"><span class="n">回酒店取行李、退房</span><span class="d"></span></span></li>
+        <li><span class="t">14:30</span><span class="c"><span class="n">出发去天府国际机场<span class="tag pay">¥150–180</span><span class="tag star">留足时间</span></span><span class="d">打车 60–75 分钟。<strong>周日下午可能堵车，宁可早到机场坐着等，也别在路上焦虑。</strong></span></span></li>
+        <li><span class="t">15:45</span><span class="c"><span class="n">抵达机场，办登机、退税</span><span class="d">大额购物记得在市内商场办好离境退税手续。</span></span></li>
+        <li><span class="t">18:25</span><span class="c"><span class="n">SQ843 起飞</span><span class="d"></span></span></li>
+        <li><span class="t">23:30</span><span class="c"><span class="n">抵达新加坡樟宜机场</span><span class="d">提前安排好接机或订好车，别让父母在深夜排队等出租车。</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 天气 ============ -->
+<section id="weather">
+  <h2>Weather</h2>
+  <div class="h2sub">11月底的天气 · 比数字更冷</div>
+
+  <div class="note warn">
+    <b>最重要的一句话</b>
+    重庆成都 11 月底气温看着是 10–17°C，不算冷。但<strong>湿度 79–83%、几乎不出太阳、常年阴天带雾</strong>——这种湿冷是「体感比温度低 5 度」的冷，从新马过去的人尤其扛不住。<strong>按 10°C 以下的标准准备衣物，不会错。</strong>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>项目</th><th>重庆</th><th>成都</th></tr></thead>
+      <tbody>
+        <tr><td><strong>日间最高</strong></td><td class="num">17°C（月底降至 10–15°C）</td><td class="num">16°C（午间可到 17–22°C）</td></tr>
+        <tr><td><strong>夜间最低</strong></td><td class="num">12°C</td><td class="num">10°C</td></tr>
+        <tr><td><strong>湿度</strong></td><td class="num">约 83% · 全年最湿的月份之一</td><td class="num">约 79%</td></tr>
+        <tr><td><strong>降雨</strong></td><td>约 56mm / 7 个雨天，多为细雨绵绵</td><td>约 16mm / 8 个雨天，雨量很小</td></tr>
+        <tr><td><strong>日照</strong></td><td>平均每天仅约 1 小时 · 常年阴天</td><td>平均每天 3–5 小时</td></tr>
+        <tr><td><strong>雾</strong></td><td>清晨多雾，约 10 点后散去</td><td>偶有雾霾</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="swipe">← 表格可左右滑动查看完整内容 →</p>
+  
+
+  <h3>穿衣公式：三层法</h3>
+  <div class="grid2">
+    <div class="mini">
+      <div class="k">内层</div>
+      <div class="v">保暖内衣</div>
+      <div class="s">优衣库 HEATTECH 一类。带 2 套换洗，湿冷天最有用的一件装备。</div>
+    </div>
+    <div class="mini">
+      <div class="k">中层</div>
+      <div class="v">毛衣 / 抓绒</div>
+      <div class="s">室内有暖气时可以脱掉，方便调节。</div>
+    </div>
+    <div class="mini">
+      <div class="k">外层</div>
+      <div class="v">防风外套 / 薄羽绒</div>
+      <div class="s">重点是<strong>防风防水</strong>。湿冷 + 风比单纯低温难受得多。</div>
+    </div>
+    <div class="mini">
+      <div class="k">最关键</div>
+      <div class="v">防滑鞋</div>
+      <div class="s"><strong>重庆全是梯坎和坡，遇雨湿滑。</strong>父母的鞋务必是防滑软底、已经穿惯的，绝不要买新鞋出门。</div>
+    </div>
+  </div>
+
+  <p style="margin-top:14px">另外备：<strong>折叠伞</strong>（雨伞兼防潮）、<strong>薄围巾</strong>（早晚护颈，长辈最容易在这里着凉）、<strong>保温杯</strong>（中国到处有热水，长辈喝热水的习惯要满足）。</p>
+</section>
+
+<!-- ============ 住宿 ============ -->
+<section id="hotel">
+  <h2>Where to Stay</h2>
+  <div class="h2sub">住哪里 · 位置比星级重要</div>
+
+  <h3>重庆 · 住解放碑 / 洪崖洞一带（3晚）</h3>
+  <p>理由：地铁 1、2、6 号线交汇，出门就是洪崖洞和长江索道北站，餐厅密集，晚上不用打车。<strong>务必订「江景房」</strong>——在房间里就能看洪崖洞和两江夜景。走了一天回来，父母不用再出门就能看到重庆最好的景，这笔钱花得极值。</p>
+
+  <h3>成都 · 住春熙路 / 太古里一带（3晚）</h3>
+  <p>理由：成都的绝对市中心，地铁 2、3 号线，走路能到宽窄巷子方向的公交，全是平地，晚上散步安全舒服。去熊猫基地和天府机场都方便。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>档次</th><th>重庆（解放碑）</th><th>成都（春熙路/太古里）</th><th>房价 / 晚</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>经济型</strong><br><span style="font-size:13px;color:var(--muted)">干净可靠</span></td>
+          <td>全季、亚朵、桔子水晶 解放碑店</td>
+          <td>全季、亚朵、桔子水晶 春熙路太古里店</td>
+          <td class="num">¥300–450<br><span style="font-size:12.5px;color:var(--muted)">RM180–275</span></td>
+        </tr>
+        <tr class="best">
+          <td><strong>舒适型 ★</strong><br><span style="font-size:13px;color:var(--muted)">推荐档位</span></td>
+          <td>丽笙、假日酒店、凯宾斯基（选江景房）</td>
+          <td>成都美居、索菲特万达、亚朵 S</td>
+          <td class="num">¥550–850<br><span style="font-size:12.5px;color:var(--muted)">RM335–515</span></td>
+        </tr>
+        <tr>
+          <td><strong>高端型</strong><br><span style="font-size:13px;color:var(--muted)">度假感</span></td>
+          <td>尼依格罗 Niccolo、丽晶 Regent、洲际</td>
+          <td>博舍 The Temple House、瑞吉、香格里拉</td>
+          <td class="num">¥1,000–2,200<br><span style="font-size:12.5px;color:var(--muted)">RM605–1,335</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="swipe">← 表格可左右滑动查看完整内容 →</p>
+  
+
+  <div class="note info">
+    <b>带父母订房，这四点比星级重要</b>
+
+    ① <strong>有电梯、房间不在顶楼加建层</strong>（重庆老楼很多是「进门是 10 楼、出门是 1 楼」的魔幻结构）。<br>
+    ② <strong>浴室有防滑垫和扶手</strong>，或至少是淋浴不是深浴缸 —— 老人跌倒最常发生在浴室。<br>
+    ③ <strong>订两间房或一间双床大房</strong>，别为省钱让三个人挤一间。<br>
+    ④ <strong>确认有暖气或空调制热</strong>。重庆成都不属于集中供暖区，11 月底的老酒店可能没暖气，湿冷的夜里非常难熬 —— 订房时直接问一句。
+  </div>
+</section>
+
+<!-- ============ 交通 ============ -->
+<section id="transport">
+  <h2>Getting Around</h2>
+  <div class="h2sub">交通方式怎么选</div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>场景</th><th>推荐方式</th><th>费用</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr class="best"><td><strong>市内日常</strong></td><td>滴滴 / 高德打车</td><td class="num">¥15–40 / 程</td><td>带长辈的默认选项。重庆坡陡，能不走就不走；成都路平但距离远。</td></tr>
+        <tr><td><strong>机场往返市区</strong></td><td>出租车 / 网约车</td><td class="num">重庆 ¥90–120<br>成都 ¥150–180</td><td>带行李绝不挤地铁。成都天府机场很远，务必算足 75 分钟。</td></tr>
+        <tr class="best"><td><strong>重庆 → 成都</strong></td><td>高铁（沙坪坝→成都东）</td><td class="num">二等 ¥154<br>一等 ¥246</td><td>最快 62 分钟。带长辈买一等座，值。</td></tr>
+        <tr><td><strong>大足石刻当日</strong></td><td>包车一日</td><td class="num">¥600–800 / 车</td><td>三人分摊约 ¥250/人，门到门，比高铁+转车舒服太多。</td></tr>
+        <tr><td><strong>都江堰当日</strong></td><td>城际动车 + 打车</td><td class="num">¥15–25 单程</td><td>班次密、车程短，不需要包车。</td></tr>
+        <tr><td><strong>长江索道</strong></td><td>从南岸南站上</td><td class="num">往返 ¥30</td><td>北站排队 1 小时+，南站基本不排。</td></tr>
+        <tr><td><strong>地铁</strong></td><td>支付宝乘车码</td><td class="num">¥2–8</td><td>只在不带行李、不赶时间时用。重庆地铁站深、扶梯长。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="swipe">← 表格可左右滑动查看完整内容 →</p>
+  
+
+  <div class="note key">
+    <b>高铁票：11月12日才开卖，别提前折腾</b>
+    中国铁路 12306 <strong>只在发车前 15 天放票</strong>，一天都提前不了。11月27日的车，11月12日开售。<br>
+    <strong>外国护照怎么买：</strong>下载「铁路12306」App（有英文版），用护照注册 → 上传护照照片 → 手机和邮箱验证（接受国际号码），审核通常几分钟到 24 小时。<strong>全程电子票，进站直接刷护照过闸机</strong>，不需要取纸质票。<br>
+    如果 12306 外卡支付失败（常见），改用 <strong>Trip.com（携程国际站）</strong>代订，票价一样，收一点手续费，省心。
+  </div>
+</section>
+
+<!-- ============ 预算 ============ -->
+<section id="budget">
+  <h2>Budget</h2>
+  <div class="h2sub">三档预算对比 · 每人 7 天（不含机票）</div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>项目</th><th>经济型</th><th>舒适型 ★</th><th>高端型</th></tr></thead>
+      <tbody>
+        <tr><td><strong>住宿</strong><span style="display:block;font-size:12.5px;color:var(--muted)">6晚 · 双人分摊</span></td><td class="num">¥1,050</td><td class="num">¥2,100</td><td class="num">¥4,800</td></tr>
+        <tr><td><strong>餐饮</strong><span style="display:block;font-size:12.5px;color:var(--muted)">7天 · 三餐</span></td><td class="num">¥1,050</td><td class="num">¥1,960</td><td class="num">¥3,500</td></tr>
+        <tr><td><strong>城际高铁</strong></td><td class="num">¥154<br><span style="font-size:12px;color:var(--muted)">二等座</span></td><td class="num">¥246<br><span style="font-size:12px;color:var(--muted)">一等座</span></td><td class="num">¥478<br><span style="font-size:12px;color:var(--muted)">商务座</span></td></tr>
+        <tr><td><strong>市内交通</strong></td><td class="num">¥400<br><span style="font-size:12px;color:var(--muted)">地铁为主</span></td><td class="num">¥1,200<br><span style="font-size:12px;color:var(--muted)">打车 + 1天包车</span></td><td class="num">¥2,600<br><span style="font-size:12px;color:var(--muted)">全程专车司导</span></td></tr>
+        <tr><td><strong>门票 + 演出</strong><span style="display:block;font-size:12.5px;color:var(--muted)">全票 · 无长辈优惠</span></td><td class="num">¥550</td><td class="num">¥800</td><td class="num">¥1,300</td></tr>
+        <tr><td><strong>手信 + 杂项</strong></td><td class="num">¥300</td><td class="num">¥600</td><td class="num">¥1,500</td></tr>
+        <tr class="best"><td><strong>合计 / 人</strong></td><td class="num"><strong>≈ ¥3,500</strong><br><span style="font-size:12.5px;color:var(--muted)">≈ RM2,135 / S$650</span></td><td class="num"><strong>≈ ¥6,900</strong><br><span style="font-size:12.5px;color:var(--muted)">≈ RM4,180 / S$1,275</span></td><td class="num"><strong>≈ ¥14,200</strong><br><span style="font-size:12.5px;color:var(--muted)">≈ RM8,600 / S$2,625</span></td></tr>
+        <tr><td><strong>＋ 机票</strong><span style="display:block;font-size:12.5px;color:var(--muted)">开口程往返</span></td><td class="num">S$300–450</td><td class="num">S$450–750</td><td class="num">S$1,200+<br><span style="font-size:12px;color:var(--muted)">商务舱另计</span></td></tr>
+        <tr class="best"><td><strong>三人总计</strong></td><td class="num"><strong>≈ RM10,000</strong></td><td class="num"><strong>≈ RM18,500</strong></td><td class="num"><strong>≈ RM38,000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="swipe">← 表格可左右滑动查看完整内容 →</p>
+  
+
+  <div class="note ok">
+    <b>我的建议：走「舒适型」，但只在三件事上花钱</b>
+    ① <strong>高铁一等座</strong>（+¥90）② <strong>大足石刻包车</strong>（+¥250/人）③ <strong>景区内所有观光车和扶梯</strong>（每次 ¥15–30）。<br>
+    这三项加起来人均不到 ¥400，但直接决定父母是「玩得开心」还是「累到最后两天不想出门」。其余地方（住宿档次、餐厅档次）反而可以省。
+  </div>
+
+  <p style="font-size:13.5px;color:var(--muted)">汇率按 ¥1 ≈ RM0.61 ≈ S$0.185 估算（2026年8月16日），实际以出行时为准。</p>
+</section>
+
+<!-- ============ 行前清单 ============ -->
+<section id="prep">
+  <h2>Checklist</h2>
+  <div class="h2sub">行前准备清单 · 可勾选</div>
+
+  <div class="prog">
+    <div class="bar"><div class="fill" id="fill"></div></div>
+    <div class="pct" id="pct">0 / 0</div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">证件与签证</h3>
+    <ul class="chk">
+      <li><input type="checkbox"><span class="txt">确认三本护照有效期在 <strong>2027年5月30日</strong> 之后<small>入境中国要求护照有效期 6 个月以上</small></span></li>
+      <li><input type="checkbox"><span class="txt">确认免签资格 —— 马来西亚护照免签<small>中马互免签证协议 2025年7月17日生效：持<strong>马来西亚普通护照</strong>入境中国，单次停留 30 天，180 天内累计不超过 90 天，涵盖旅游、探亲、商务。本次 7 天行程完全够用，<strong>不需要办签证</strong>。<br>注意：协议有效期 5 年（到 2030年7月），届时自动续期 5 年 —— 本次出行不受影响。</small></span></li>
+      <li><input type="checkbox"><span class="txt">注意住宿登记规定<small>住酒店由前台自动登记。若中途住民宿或亲友家，需在 <strong>24 小时内</strong>到当地派出所办理住宿登记。本行程全程住酒店，不涉及。</small></span></li>
+      <li><input type="checkbox"><span class="txt">打印机票行程单 + 酒店订单各一份<small>免签入境虽然只查护照，但边检有权要求出示。纸质版最保险，别只存在手机里。</small></span></li>
+      <li><input type="checkbox"><span class="txt">护照首页拍照存手机 + 云端<small>三个人的都存，父母的存在你手机里一份</small></span></li>
+      <li><input type="checkbox"><span class="txt">购买旅游保险<small>务必含<strong>境外医疗</strong>和<strong>行程取消</strong>。59 岁通常还在标准费率区间内（多数保单 60 岁或 70 岁才加费），有慢性病要如实申报。</small></span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">预约与订票（有明确时间点，别错过）</h3>
+    <div class="note key" style="margin-bottom:14px">
+      <b>父母 59 岁，所有「长辈免预约 / 免票」都用不上</b>
+      中国景区的老年优惠门槛是 <strong>60 周岁</strong>。父母差一年，<strong>三个人都要正常买票、正常预约</strong>。这直接影响熊猫基地 —— 原本 60 岁以上可以免预约刷证进园，现在必须提前抢票。
+    </div>
+    <ul class="chk">
+      <li><input type="checkbox"><span class="txt"><strong>11月12日</strong> · 12306 抢高铁票 × 3<small>沙坪坝 → 成都东，11月27日下午班次。只在发车前 15 天放票。</small></span></li>
+      <li><input type="checkbox"><span class="txt"><strong>11月14日起每天查</strong> · 熊猫基地门票 × 3<small>订 11月28日<strong>上午场</strong>（入园时段 7:30–12:00）。放票口径各渠道不一（7 天 / 14 天），从 11月14日 起盯，开放就订。可用 Trip.com 或官方小程序，护照实名。</small></span></li>
+      <li><input type="checkbox"><span class="txt">三峡博物馆预约 × 3（免费）<small>提前 1–7 天在博物馆公众号预约，订 11月25日上午。外籍护照可登记。</small></span></li>
+      <li><input type="checkbox"><span class="txt">蜀风雅韵川剧变脸 × 3<small>订 11月28日 19:00 场，选中间偏前的位置。携程/大众点评可订。</small></span></li>
+      <li><input type="checkbox"><span class="txt">大足石刻当日包车（11月26日）<small>¥600–800 一车，门到门约 90 分钟，比高铁+转车舒服很多。</small></span></li>
+      <li><input type="checkbox"><span class="txt">确认两位父母的生日<small>如果任何一位在 <strong>2026年11月24日之前</strong>满 60 岁，熊猫基地就可以免预约刷证入园、大足石刻半价 ¥53、四川景区半价 —— 三人门票能省约 ¥300。值得核对一下。</small></span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">支付（最容易出问题的一环）</h3>
+    <div class="note warn" style="margin-bottom:14px">
+      <b>中国几乎是无现金社会</b>
+      街边小店、菜市场、很多餐厅<strong>不收现金也不刷外国信用卡</strong>。只有四五星酒店和高端商场能刷 Visa/Master。<strong>支付宝一定要在出发前在家里绑好并试成功。</strong>
+    </div>
+    <ul class="chk">
+      <li><input type="checkbox"><span class="txt">下载支付宝 Alipay，用手机号注册<small>首选，对外卡支持最好</small></span></li>
+      <li><input type="checkbox"><span class="txt">在支付宝绑定 Visa / Mastercard<small>小额消费 0 手续费。绑完<strong>先在新加坡试着付一笔小钱</strong>，确认能用。</small></span></li>
+      <li><input type="checkbox"><span class="txt">完成支付宝护照实名认证<small>超过一定额度的交易需要，提前做好免得当场卡住</small></span></li>
+      <li><input type="checkbox"><span class="txt">下载微信 WeChat 并绑卡作备用<small>部分小店只支持微信。微信风控更严，容易触发限制，所以当备胎。</small></span></li>
+      <li><input type="checkbox"><span class="txt">帮父母也各装一个支付宝<small>哪怕他们不太用，走散或分开行动时是保命的。至少把付款码位置教会。</small></span></li>
+      <li><input type="checkbox"><span class="txt">兑换 ¥2,000–3,000 现金<small>三人份。小面馆、寺庙功德箱、突发状况都要用。分三处放。</small></span></li>
+      <li><input type="checkbox"><span class="txt">通知银行出境，避免信用卡被风控冻结</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">通讯与 App</h3>
+    <ul class="chk">
+      <li><input type="checkbox"><span class="txt">买中国 eSIM 或开通新马电信漫游<small><strong>关键：中国大陆无法直接访问 Google、WhatsApp、YouTube、Instagram、Facebook。</strong><br>用<strong>国际漫游</strong>或<strong>境外 eSIM</strong>（流量走境外服务器）可以正常使用这些 App，这是最省事的做法。买中国本地 SIM 卡反而会被墙。</small></span></li>
+      <li><input type="checkbox"><span class="txt">下载 <strong>高德地图</strong><small>中国境内 Google Maps 数据几乎不可用。高德是必装的，导航、找店、看公交全靠它。</small></span></li>
+      <li><input type="checkbox"><span class="txt">下载 <strong>滴滴出行</strong>（DiDi）<small>打车。支付宝里也内置了打车入口，可以不单独装。</small></span></li>
+      <li><input type="checkbox"><span class="txt">下载 <strong>铁路12306</strong>（英文版）并完成护照认证<small>提前做，审核可能要 24 小时。11月12日抢票时才不会手忙脚乱。</small></span></li>
+      <li><input type="checkbox"><span class="txt">下载 <strong>大众点评</strong> 和 <strong>Trip.com</strong><small>点评用来找餐厅和线上排号；Trip.com 用来订票、订演出、做 12306 的备胎。</small></span></li>
+      <li><input type="checkbox"><span class="txt">下载翻译 App 并下载离线中文包</span></li>
+      <li><input type="checkbox"><span class="txt">建一个三人微信/WhatsApp 群，共享实时位置<small>景区人多走散时最有用</small></span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">父母健康准备</h3>
+    <ul class="chk">
+      <li><input type="checkbox"><span class="txt">常用药按 <strong>行程天数 + 5 天</strong> 备量<small>降压药、降糖药、心脏药等。分两份放在不同行李里，防丢失。</small></span></li>
+      <li><input type="checkbox"><span class="txt">让医生开一份英文/中文药单<small>写明药名、成分、剂量。海关查验和万一需要当地补药时都用得上。</small></span></li>
+      <li><input type="checkbox"><span class="txt">备常规药：感冒药、肠胃药、止泻药、退烧药、创可贴<small><strong>肠胃药特别重要</strong>——川渝饮食油辣，长辈很容易吃坏肚子</small></span></li>
+      <li><input type="checkbox"><span class="txt">带血压计（如父母有高血压）<small>旅途劳累 + 湿冷天气容易血压波动</small></span></li>
+      <li><input type="checkbox"><span class="txt">记下重庆成都的三甲医院地址<small>重庆：重医附一院、西南医院。成都：华西医院（全国顶尖）。存在手机备忘录里。</small></span></li>
+      <li><input type="checkbox"><span class="txt">出发前一周提醒父母适度走路适应<small>每天走 30 分钟，比到了当地才发现走不动强</small></span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">行李</h3>
+    <ul class="chk">
+      <li><input type="checkbox"><span class="txt">保暖内衣 × 2 套 / 人<small>湿冷天最有用的装备</small></span></li>
+      <li><input type="checkbox"><span class="txt">毛衣或抓绒 + 防风外套 / 薄羽绒</span></li>
+      <li><input type="checkbox"><span class="txt"><strong>防滑软底鞋</strong>（已穿惯的，不要新鞋）<small>整趟行程最重要的一件装备。重庆梯坎多，遇雨湿滑。</small></span></li>
+      <li><input type="checkbox"><span class="txt">折叠伞 × 3<small>11月两地都是细雨绵绵的天气</small></span></li>
+      <li><input type="checkbox"><span class="txt">薄围巾<small>早晚护颈，长辈最容易在这儿着凉</small></span></li>
+      <li><input type="checkbox"><span class="txt">保温杯<small>中国到处有免费热水，长辈喝热水的习惯要满足</small></span></li>
+      <li><input type="checkbox"><span class="txt">充电宝（有清晰 3C 标识、标注额定能量、≤100Wh）<small><strong>2025年起中国民航禁止携带无 3C 标识或被召回型号的充电宝乘机。</strong>只能随身携带、不可托运。买新的记得看清标识。</small></span></li>
+      <li><input type="checkbox"><span class="txt">中国插座转换头<small>中国用 A/C/I 型，与马来西亚的英标 G 型不同，务必带转换头</small></span></li>
+      <li><input type="checkbox"><span class="txt">轻便折叠登山杖（可选）<small>如果父母走久了膝盖不适，一根手杖比什么都管用</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 长辈须知 ============ -->
+<section id="elder">
+  <h2>Field Notes</h2>
+  <div class="h2sub">带父母出行 · 十条实战经验</div>
+
+  <div class="card">
+    <ul class="plain" style="margin-bottom:0">
+      <li><strong>午休时段留着，不一定要用。</strong>行程每天 13:30–15:30 都留了回酒店的空档。59 岁未必需要真的睡，但这段余量在连着走了三天之后会变得很值钱 —— 累的那天有得退，比硬撑强。</li>
+      <li><strong>重庆的「一楼」不一定在地面。</strong>山城的建筑经常是从 8 楼走出去就是马路。走路前先在高德地图上看一眼，别莽撞地爬一整段梯坎。</li>
+      <li><strong>能坐观光车就坐。</strong>大足石刻 ¥20、熊猫基地 ¥10、都江堰 ¥15 —— 这些钱一定要花。景区面积远比想象中大。</li>
+      <li><strong>火锅一定点鸳鸯锅或清汤锅。</strong>重庆的红汤对没吃惯的人是硬仗，长辈吃完当晚肠胃闹一夜，第二天行程就废了。</li>
+      <li><strong>中国景区厕所以蹲坑为主。</strong>膝盖不好的话，找带「无障碍」标识的隔间，那种通常是坐便。大足石刻、都江堰这类山地景区，两个厕所之间可能隔很远，出发前先解决。</li>
+      <li><strong>洪崖洞、宽窄巷子、锦里这类地方，看外围就够了。</strong>里面是拥挤的商业街，人流对老人是压力和风险，不是体验。</li>
+      <li><strong>每天出门前拍一张父母当天穿着的照片。</strong>万一走散，找人和报警时用得上。这是最不起眼但最有用的一条。</li>
+      <li><strong>把酒店名片（中文）放进父母口袋。</strong>他们即使不会说中文，给司机看卡片就能回酒店。</li>
+      <li><strong>「今天不想动」是允许的。</strong>行程里 Day 3 和 Day 6 都准备了轻松替代方案，随时可以换。这趟旅行的目的是他们开心，不是打完卡。</li>
+      <li><strong>多拍合影，少拍风景。</strong>十年后你翻相册，想看的不是洪崖洞。</li>
+    </ul>
+  </div>
+
+  <div class="note info">
+    <b>关于门票优惠，别抱期待</b>
+    父母 59 岁，中国景区的老年优惠一律用不上（门槛 60 周岁）。而且政策原文多以「身份证」表述，外籍游客即便到了年龄，各景区执行也有差异。<strong>直接按全票做预算，能省是惊喜。</strong>
+  </div>
+</section>
+
+<footer>
+  <p><strong>关于这份行程的可靠性</strong><br>
+  航班时刻、票价、门票价格与政策均为 2026 年 8 月查证的资料，出行前请再次核对。尤其是：航班时刻可能随冬春航季调整；<strong>熊猫基地的放票提前天数各渠道口径不一（7 天 / 14 天），务必从 11月14日 起自行盯官方渠道</strong>；高铁票需在发车前 15 天购买。<br><br>
+  本行程按「<strong>59 岁、行动自如、持马来西亚护照</strong>」设计。主线是舒适节奏，每天另附「＋ 体力富余可加码」的升级选项；若某天状态不佳，Day 3 和 Day 6 的轻松替代方案可以直接顶上。</p>
+  <p style="margin-top:16px;color:#A39A8E">重庆 · 成都 七日行程 ｜ 2026.11.24 – 11.30 ｜ 制作于 2026年8月16日</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.chk input[type=checkbox]'));
+  var fill = document.getElementById('fill');
+  var pct  = document.getElementById('pct');
+
+  function render(){
+    var done = boxes.filter(function(b){return b.checked;}).length;
+    var total = boxes.length;
+    fill.style.width = (total ? (done/total*100) : 0) + '%';
+    pct.textContent = done + ' / ' + total;
+  }
+
+  boxes.forEach(function(b){
+    var li = b.closest('li');
+    b.addEventListener('change', function(){
+      li.classList.toggle('done', b.checked);
+      render();
+    });
+    li.addEventListener('click', function(e){
+      if (e.target.tagName !== 'INPUT') {
+        b.checked = !b.checked;
+        b.dispatchEvent(new Event('change'));
+      }
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
